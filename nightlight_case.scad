@@ -34,20 +34,19 @@ difference() {
     }
     
     translate([unoDimensions[0]/2+2, -7, unoDimensions[2]*2]) {
-    cube(size=[4, 5, 10]);
-}
+        cube(size=[4, 5, 10]);
+    }
 
 }
 
 
 
-//translate([unoDimensions[0]/2+4, -5, unoDimensions[2]*2]) {
-//    cylinder(h=50, r=2);
-//}
+
     
 
     
-translate([unoDimensions[0] + 100, 0, 5]) {
+
+translate([unoDimensions[0] + 100, 0, 3]) {
     rotate([0,180,0]) {
 
             enclosureLid();
