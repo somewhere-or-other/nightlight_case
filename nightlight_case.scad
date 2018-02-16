@@ -8,19 +8,24 @@ unoDimensions = boardDimensions( UNO );
 
 //enclosure with modifications
 translate([-unoDimensions[0]*1.5,0,0]) {
+
+
     difference() {
         //enclosure
         enclosure(boardType=UNO, mountType=PIN);
 
-        
         //reset text
-        translate([unoDimensions[0]/2, unoDimensions[1]-1, unoDimensions[2]/2+5]) {
-            rotate([90, 0, 180]) {
-                resize([15, 0, 0], auto=true) {
-                    text("Reset");
+
+            translate([unoDimensions[0]/2, unoDimensions[1]-0.5, unoDimensions[2]/2+5]) {
+                rotate([90, 0, 180]) {
+                    linear_extrude(height=1) {
+                        resize([15, 0, 0], auto=true) {
+                        text("Reset");
+                    }
                 }
-            }
+            }     
         }
+        
         
         //hole for reset button
         translate([unoDimensions[0]/2-7, unoDimensions[1]+5, unoDimensions[2]+7]) {
@@ -41,6 +46,7 @@ translate([-unoDimensions[0]*1.5,0,0]) {
         }
 
     }
+
 }
 
 
