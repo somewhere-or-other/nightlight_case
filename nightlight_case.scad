@@ -10,6 +10,7 @@ unoDimensions = boardDimensions( UNO );
 translate([-unoDimensions[0]*1.5,0,0]) {
 
 
+
     difference() {
         //enclosure
         enclosure(boardType=UNO, mountType=PIN);
@@ -26,13 +27,16 @@ translate([-unoDimensions[0]*1.5,0,0]) {
 //            }     
 //        }
 //        
-        
-        //hole for reset button
-        translate([unoDimensions[0]/2-7, unoDimensions[1]+5, unoDimensions[2]+7]) {
+
+
+    //hole for reset button
+    translate([unoDimensions[0]/2+4, 0, unoDimensions[2]]) {
             rotate([90, 0, 0]) {
                 cylinder(h=10, r=2);
             }
         }
+            
+
         
         //hole for cables to LEDs
         translate([unoDimensions[0]/2+4,0,unoDimensions[2]*2]) {
