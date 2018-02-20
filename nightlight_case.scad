@@ -6,8 +6,13 @@ unoDimensions = boardDimensions( UNO );
 //arduino(UNO);
 
 
+
+
 //enclosure with modifications
 translate([-unoDimensions[0]*1.5,0,0]) {
+
+
+
 
 
     difference() {
@@ -28,22 +33,26 @@ translate([-unoDimensions[0]*1.5,0,0]) {
 //        
         
         //hole for reset button
-        translate([unoDimensions[0]/2-7, unoDimensions[1]+5, unoDimensions[2]+7]) {
+        translate([unoDimensions[0]/2, unoDimensions[1]+5, unoDimensions[2]+7]) {
             rotate([90, 0, 0]) {
-                cylinder(h=10, r=2);
+                cylinder(h=10, d=6, $fn=36);
             }
         }
         
+
         //hole for cables to LEDs
-        translate([unoDimensions[0]/2+4,0,unoDimensions[2]*2]) {
-            rotate([90, 0, 0]) {
-                cylinder(h=10, r=2);
+        union() {
+            translate([5, unoDimensions[1]-3 , unoDimensions[2]*2+3]) {
+                cube(size=[6,10,10], center=true);
+            }
+
+            translate([5,unoDimensions[1]-3,unoDimensions[2]*2-2]) {
+                rotate([0,90,90]) {
+                    cylinder(d=6,h=10, center=true, $fn=36);
+                }
             }
         }
-        
-        translate([unoDimensions[0]/2+2, -7, unoDimensions[2]*2]) {
-            cube(size=[4, 5, 10]);
-        }
+
 
     }
 
