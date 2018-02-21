@@ -5,7 +5,7 @@ unoDimensions = boardDimensions( UNO );
 
 //arduino(UNO);
 
-
+//echo("Uno Dimensions: ", unoDimensions);
 
 
 //enclosure with modifications
